@@ -1,0 +1,57 @@
+#about_title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#contact_title, #support_title, #releases_title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.about, .support_div, .contact_div, .releases_div {
+    line-height: 1.5;
+}
+
+.input_section {
+    text-align: center;
+}
+
+.support_div a, .releases_div a, .email  {
+    text-decoration: underline;
+    color: rgb(38, 166, 154);
+}
+
+td, th {
+    width: auto;
+}
+
+#captcha {
+    width: fit-content;
+    margin: 5px auto;
+}
+
+input, textarea {
+    border: 1px solid grey;
+    border-radius: 4px;
+    padding: 7px;
+    margin: 5px 0;
+    width: 287px;
+    max-width: 95%
+}
+
+textarea {
+    font-family: Arial;
+    height: 20vh;
+}
+
+.submit_btn {
+    border: 1px solid grey;
+    border-radius: 4px;
+    padding: 7px;
+    margin: 5px 0;
+    width: 304px;
+    max-width: 100%
+}

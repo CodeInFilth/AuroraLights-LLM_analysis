@@ -1,0 +1,87 @@
+{% extends "format.html" %}
+{% load static %}
+{% load filter %}
+
+{% block title %}StocksEra | Subreddit{% endblock %}
+
+{% block additional_script %}
+<link rel="stylesheet" href="{% static 'style/subreddit_count.css' %}">
+<script src="{% static 'javascript/subreddit_count.js' %}"></script>
+<script type="text/javascript">
+    var onloadCallback = function() {
+        grecaptcha.render('captcha', {
+            'sitekey' : '6Ldyh4gcAAAAAEaQgaZAmPxMLuXoOlPnsNis85XA'
+        });
+    var response = grecaptcha.getResponse();
+    };
+</script>
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+{% endblock %}
+
+{% block onload_properties%}restore_dark_mode();subreddit_individual_table();subreddit_individual(48){% endblock %}
+
+{% block main_nav %}
+    <a href="/">Stocksera</a> /
+    <a href="/subreddit_count">Subreddit Statistics</a>
+{% endblock %}
+
+{% block main_content %}
+
+    <div class="contents_div">
+        <div id="ticker_basic_stats"></div>
+
+        <div class="individual_subreddit_description">
+            <h2>r/{{subreddit}}</h2>
+            <div style="width: max-content;margin: auto;" class="explore"><a href="https://www.reddit.com/r/{{subreddit}}" target="_blank">Explore ></a></div>
+        </div>
+
+        <div class="date_selector" style="margin-top:15px">
+            <button name="date_range" id="1 Months" onclick="btn_selected(this); subreddit_individual(1)">1 Months</button>
+            <button name="date_range" id="3 Months" onclick="btn_selected(this); subreddit_individual(3)">3 Months</button>
+            <button name="date_range" id="Max" onclick="btn_selected(this); subreddit_individual(48)" class="selected">Max</button>
+        </div>
+
+        <div id="chart" class="chart"></div>
+
+        <div class="scrollable_div">
+            {{ stats|safe }}
+        </div>
+
+    </div>
+
+    <div style="display: none" id="submit_subreddit" class="contents_div">
+        <h2>Subreddit not found :(</h2>
+        <div>If you are aware of the subreddit, do fill it in below and we will evaluate it.</div>
+        <form action="" method="POST" autocomplete="off" onsubmit="return validateRecaptcha();"> {% csrf_token %}
+            <div class="input_div">
+                <input name="quote" placeholder="Ticker: " value="{{ticker_selected}}" class="new_subreddit_input" type="text" required>
+                <br>
+                <input name="new_subreddit_name" placeholder="Subreddit: " class="new_subreddit_input" type="text" required>
+                <div id="captcha"></div>
+                <button class="new_subreddit_btn">Submit</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
+{% block bottom_script %}
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+    function validateRecaptcha() {
+        var response = grecaptcha.getResponse();
+        if (response.length === 0) {
+            alert("Not verified! Please check the checkbox.");
+            return false;
+        } else {
+            return true;
+        }
+    }
+</script>
+<script>
+    <!--Hack to convert python variables to javascript-->
+    var None = "N/A", False = false; True = true;
+    var information = {{information|safe}};
+    check_subreddit("{{ticker_selected}}", "{{subreddit|safe}}")
+    show_ticker_price(information)
+</script>
+{% endblock %}

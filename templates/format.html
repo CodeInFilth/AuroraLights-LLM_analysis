@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+{% load static %}
+{% load filter %}
+<html lang="en"
+      dir="ltr"
+      class="dark-mode">
+
+    <head>
+	    
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible"
+              content="IE=edge">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{% block title %}{% endblock %}</title>
+
+
+        <!-- Prevent the demo from appearing in search engines -->
+        <meta name="robots"
+              content="noindex">
+
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CRoboto:400,500%7CExo+2:600&display=swap"
+              rel="stylesheet">
+
+        <!-- Preloader -->
+        <link type="text/css"
+              href="{%  static 'auroraLights/vendor/spinkit.css' %}"
+              rel="stylesheet">
+
+        <!-- Perfect Scrollbar -->
+        <link type="text/css"
+              href="{%  static 'auroraLights/vendor/perfect-scrollbar.css' %}"
+              rel="stylesheet">
+
+        <!-- Material Design Icons -->
+        <link type="text/css"
+              href="{%  static 'auroraLights/css/material-icons.css' %}"
+              rel="stylesheet">
+
+        <!-- Font Awesome Icons -->
+        <link type="text/css"
+              href="{%  static 'auroraLights/css/fontawesome.css' %}"
+              rel="stylesheet">
+
+        <!-- Preloader -->
+        <link type="text/css"
+              href="{%  static 'auroraLights/css/preloader.css' %}"
+              rel="stylesheet">
+
+        <!-- App CSS -->
+        <link type="text/css"
+              href="{%  static 'auroraLights/css/app.css' %}"
+              rel="stylesheet">
+
+        <!-- Dark Mode CSS -->
+        <link type="text/css"
+              href="{%  static 'auroraLights/css/dark.css' %}"
+              rel="stylesheet">
+
+        <!-- Flatpickr -->
+        <link type="text/css"
+              href="{%  static 'auroraLights/css/flatpickr.css' %}"
+              rel="stylesheet">
+        <link type="text/css"
+              href="{%  static 'auroraLights/css/flatpickr-airbnb.css' %}"
+              rel="stylesheet">
+	
+	    <link rel="stylesheet" href="{% static 'style/format.css' %}">
+	    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}"/>
+	    <script src="{% static 'javascript/format.js' %}"></script>
+	    <script>
+	        function load_td_graph() {
+	            var ticker = "{{ticker_selected}}".replace("-", "")
+	            if (localStorage.getItem("mode") == "dark") {
+	                var graph_mode = "dark";
+	            }
+	            else {
+	                var graph_mode = "dark"
+	            }
+	
+	            new TradingView.widget(
+	            {
+	                "autosize": true,
+	                "symbol": ticker,
+	                "interval": "D",
+	                "timezone": "Etc/UTC",
+	                "theme": graph_mode,
+	                "style": "1",
+	                "locale": "en",
+	                "toolbar_bg": "#f1f3f6",
+	                "enable_publishing": false,
+	                "allow_symbol_change": true,
+	                "studies": [
+	                    "MASimple@tv-basicstudies",
+	                    "MASimple@tv-basicstudies",
+	                    "RSI@tv-basicstudies",
+	                    "MACD@tv-basicstudies"
+	                ],
+	                "container_id": "ticker_chart"
+	            }
+	            );
+	        }
+	    </script>
+	    {% block additional_script %}{% endblock %}
+
+
+	  <style rel="stylesheet" type="text/css">
+		  .fixed {
+			  position: fixed !important;
+		  }
+	  </style>
+
+
+    </head>
+    <body class="layout-app " onload="update_price_color();{% block onload_properties%}{% endblock %}">
+
+        <div class="preloader">
+            <div class="sk-chase">
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+            </div>
+
+			<!--<div class="sk-bounce">
+				<div class="sk-bounce-dot"></div>
+				<div class="sk-bounce-dot"></div>
+			</div> -->
+
+            <!-- More spinner examples at https://github.com/tobiasahlin/SpinKit/blob/master/examples.html -->
+        </div>
+
+        <!-- Drawer Layout -->
+
+        <div class="mdk-drawer-layout js-mdk-drawer-layout"
+             data-push
+             data-responsive-width="992px">
+            <div class="mdk-drawer-layout__content page-content">
+
+                <!-- Header -->
+
+                <!-- Navbar -->
+
+				{% include "includes/navbar.html" %}
+
+                <!-- // END Navbar -->
+
+                <!-- // END Header -->
+
+                <!-- BEFORE Page Content -->
+
+                <!-- // END BEFORE Page Content -->
+
+                <!-- Page Content -->
+
+                <!-- Replace this with your page content -->
+
+                <div class="container page__container flex d-flex my-32pt">
+					<!--
+					<div class="c-toolbar u-justify-center u-mb-small">
+					
+					</div>
+					-->
+					<div class="page-section fullwidth">
+							<div class="pt-16pt">
+							    <div class="container page__container d-flex flex-column flex-md-row align-items-center text-center text-sm-left">
+							        <div class="flex d-flex flex-column flex-sm-row align-items-center mb-24pt mb-md-0">
+				
+							            <div class="mb-24pt mb-sm-0 mr-sm-24pt">
+							                <h2 class="mb-0">{% block page_header %}{% endblock %}</h2>
+							            </div>
+							        </div>
+				
+								<!--<div class="row" role="tablist">
+						            <div class="col-auto">
+						                <a href="#" class="btn btn-outline-secondary">My Watchlist</a>
+						            </div>
+						        </div>-->
+				
+							    </div>
+							</div>
+						{% block main_content %}{% endblock %}
+						{% block content %}{% endblock content %}
+                	</div>
+				</div>
+                <!-- // END Replace this with your page content -->
+
+                <!-- // END Page Content -->
+
+                <!-- Footer -->
+				{% include "includes/footer.html" %}
+                <!-- // END Footer -->
+
+            </div>
+
+            <!-- // END drawer-layout__content -->
+
+            <!-- Drawer -->
+		{% include "includes/sidebar.html" %}
+            <!-- // END Drawer -->
+
+        </div>
+
+        <!-- // END Drawer Layout -->
+
+        <!-- // Scripts -->
+		{% include "includes/scripts.html" %}
+		{% block bottom_script %} {% endblock %}
+		{% block javascripts %}{% endblock javascripts %}
+        <!-- // END Scripts -->
+    </body>
+
+</html>

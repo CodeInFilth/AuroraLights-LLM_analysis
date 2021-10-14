@@ -1,0 +1,125 @@
+{% extends "format.html" %}
+{% load static %}
+{% load filter %}
+
+{% block title %}AuroaTrades | Reddit Sentiment{% endblock %}
+
+{% block additional_script %}
+<link rel="stylesheet" href="{% static 'style/reddit_sentiment.css' %}">
+{% endblock %}
+
+{% block onload_properties%}restore_dark_mode();load_graph();check_table();{% endblock %}
+
+{% block main_nav %}
+
+{% endblock %}
+
+
+{% block page_header %}Reddit Crypto Analysis{% endblock %}
+
+{% block main_content %}
+<div class="container page__container">
+	<div class="page-section">	
+	    <div class="contents_div card">
+        <div class="subreddit_intro">
+            <div><img src="/static/images/subreddit_icon/crypto_currency.png"></div>
+            <div class="main_div">
+                <div>
+                    <div class="lg">CryptoCurrency</div>
+                    <div class="sm">r/CryptoCurrency</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="subreddit_chart"></canvas>
+        </div>
+
+        <div id="filter_section">
+	            <div class="input-group input-group-merge" style="width: 275px;margin: auto;padding-top: 15px;">
+				    <input type="text" class="form-control form-control-prepended" id="search_ticker" onkeyup="searchTicker()" placeholder="Ticker Search">
+				    <div class="input-group-prepend">
+				        <div class="input-group-text">
+				            <span class="material-icons">remove_red_eye</span>
+				        </div>
+				    </div><div class="filter_contents" style="margin: 0; margin-left: 10px;" onclick="reset_table();searchTicker()"><a type="button" class="btn btn-accent btn-sm">Reset</a></div>
+				</div>
+            <div id="2-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">48H Score &#x2716;</a></div>
+            <div id="3-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">24H Score &#x2716;</a></div>
+            <div id="4-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">24H to 48H Score &#x2716;</a></div>
+            <div id="5-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">% Score Change &#x2716;</a></div>
+            <div id="6-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">1mo Chart &#x2716;</a></div>
+            <div id="7-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">Posts &#x2716;</a></div>
+            <div id="8-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">Upvotes &#x2716;</a></div>
+            <div id="9-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">Comments &#x2716;</a></div>
+            <div id="10-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">Price &#x2716;</a></div>
+            <div id="11-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">Volume &#x2716;</a></div>
+            <div id="12-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">Market Cap &#x2716;</a></div>
+            <div id="13-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">1D % Price Change &#x2716;</a></div>
+            <div id="14-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">30D % Price Change &#x2716;</a></div>
+            <div id="15-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">Circulating Supply &#x2716;</a></div>
+            <div id="16-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">Total Supply &#x2716;</a></div>
+        </div>
+
+        <div class="click_table_info"><b>Click on ticker symbol for more info.</b></div>
+
+        <div id="reddit_table_section">
+            <div style="overflow-x:scroll;">
+                <table id="reddit_table">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable(0)" class="th-sort-desc" id='0'>Rank</th>
+                            <th onclick="sortTable(1)" class="th-sort-desc" id='1'>Symbol</th>
+                            <th onclick="sortTable(2)" class="th-sort-desc" id='2'>48H Score</th>
+                            <th onclick="sortTable(3)" class="th-sort-desc" id='3'>24H Score</th>
+                            <th onclick="sortTable(4)" class="th-sort-desc" id='4'>24H to 48H Score</th>
+                            <th onclick="sortTable(5)" class="th-sort-desc" id='5'>% Score Change</th>
+                            <th id='6'>1mo Chart</th>
+                            <th onclick="sortTable(7)" class="th-sort-desc" id='7'>Posts</th>
+                            <th onclick="sortTable(8)" class="th-sort-desc" id='8'>Upvotes</th>
+                            <th onclick="sortTable(9)" class="th-sort-desc" id='9'>Comments</th>
+                            <th onclick="sortTable(10)" class="th-sort-desc" id='10'>Price</th>
+                            <th onclick="sortTable(11)" class="th-sort-desc" id='11'>Volume</th>
+                            <th onclick="sortTable(12)" class="th-sort-desc" id='12'>Mkt Cap</th>
+                            <th onclick="sortTable(13)" class="th-sort-desc" id='13'>1D % Price Change</th>
+                            <th onclick="sortTable(14)" class="th-sort-desc" id='14'>30D % Price Change</th>
+                            <th onclick="sortTable(15)" class="th-sort-desc" id='15'>Circulating Supply</th>
+                            <th onclick="sortTable(15)" class="th-sort-desc" id='16'>Total Supply</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for ticker in trending_tickers %}
+                        <tr>
+                            <td>{{ticker.1}}</td>
+                            <td><a href="{% url 'reddit_ticker_analysis' %}?quote={{ticker.2}}&subreddit=cryptocurrency" target="_blank"><img class="table_ticker_logo" src="https://s3-symbol-logo.tradingview.com/crypto/XTVC{{ticker.2}}.svg" onerror="this.error=null;load_table_error_img(this, '{{ticker.2}}')"><u><b>{{ticker.2}}</b></u></a></td>
+                            <td>{{ticker.3}}</td>
+                            <td>{{ticker.4}}</td>
+                            <td>{{ticker.5}}</td>
+                            <td>{{ticker.6}}</td>
+                            <td class="price_chart_cell">
+                                <img class="price_chart" src="/static/graph_chart/crypto/{{ticker.2}}.svg" onerror="this.src='/static/graph_chart/EMPTY_IMG.svg'">
+                            </td>
+                            <td>{{ticker.8}}</td>
+                            <td>{{ticker.9}}</td>
+                            <td>{{ticker.10}}</td>
+                            <td>{{ticker.11}}</td>
+                            <td>{{ticker.14}}</td>
+                            <td>{{ticker.15}}</td>
+                            <td>{{ticker.12}}</td>
+                            <td>{{ticker.13}}</td>
+                            <td>{{ticker.16}}</td>
+                            <td>{{ticker.17}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+	    </div></div>
+{% endblock %}
+
+{% block bottom_script %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.bundle.min.js"></script>
+<script src="{% static 'javascript/reddit_sentiment_crypto.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends "format.html" %}
+{% load static %}
+{% load filter %}
+
+{% block title %}AuroaTrades | Reddit ETF{% endblock %}
+
+{% block additional_script %}
+<link rel="stylesheet" href="{% static 'style/reddit_etf.css' %}">
+<script src="{% static 'javascript/reddit_etf.js' %}"></script>
+{% endblock %}
+
+{% block onload_properties%}restore_dark_mode();check_table(){% endblock %}
+
+{% block page_header %}Social ETF{% endblock %}
+
+{% block main_content %}
+    <script>highlight_selected_nav('reddit')</script>
+
+
+    <div class="contents_div">
+        <div>
+            <p class="table_title">Current Trades (Unrealized PnL: <span>{{unrealized_PnL}}</span>)</p>
+            <div class="scrollable_div">
+                <form action="" method="POST"> {% csrf_token %}
+                    <table id="current_trade">
+                        <thead>
+                            <tr>
+                                <th>Ticker</th>
+                                <th>Buy Date</th>
+                                <th>Buy Price</th>
+                                <th>Num Shares</th>
+                                <th>Last Refreshed Price</th>
+                                <th>Unrealized PnL</th>
+                                <th>% Change</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for ticker in open_trade %}
+                                <tr>
+                                    <td><a href="{% url 'ticker' %}?quote={{ticker.0}}" target="_blank"><img src="https://g.foolcdn.com/art/companylogos/mark/{{ticker.0}}.png" class="table_ticker_logo" onerror="this.error=null;load_table_error_img(this, '{{ticker.0}}')"><b>{{ticker.0}}</b></a></td>
+                                    <td>{{ticker.1}}</td>
+                                    <td>${{ticker.2}}</td>
+                                    <td>{{ticker.3}}</td>
+                                    <td>${{ticker.5}}</td>
+                                    <td>{{ticker.6}}</td>
+                                    <td>{{ticker.7}}%</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <div>
+            <p class="table_title">Previous Trades (Realized PnL: <span>{{realized_PnL}}</span>)</p>
+            <div class="previous_trades_stats"></div>
+            <div class="search_bar">
+                <input type="text" class="ticker_input" placeholder="Ticker:" onkeyup="searchTicker(this)" autocomplete="off">
+                <button class="submit_btn" type="button"><img src="{% static 'images/search_icon.svg' %}"></button>
+            </div>
+            <div class="scrollable_div">
+            <table id="previous_trades">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable(0)" class="th-sort-desc" id='0'>Ticker</th>
+                            <th onclick="sortTable(1)" class="th-sort-desc" id='1'>Open Date</th>
+                            <th onclick="sortTable(2)" class="th-sort-desc" id='2'>Open Price</th>
+                            <th onclick="sortTable(3)" class="th-sort-desc" id='3'>Num Shares</th>
+                            <th onclick="sortTable(4)" class="th-sort-desc" id='4'>Close Date</th>
+                            <th onclick="sortTable(5)" class="th-sort-desc" id='5'>Close Price</th>
+                            <th onclick="sortTable(6)" class="th-sort-desc" id='6'>Realized PnL</th>
+                            <th onclick="sortTable(7)" class="th-sort-desc" id='7'>% Change</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for ticker in close_trade %}
+                            <tr>
+                                <td><a href="{% url 'ticker' %}?quote={{ticker.0}}" target="_blank"><img src="https://g.foolcdn.com/art/companylogos/mark/{{ticker.0}}.png" class="table_ticker_logo" onerror="this.error=null;load_table_error_img(this, '{{ticker.0}}')"><b>{{ticker.0}}</b></a></td>
+                                <td>{{ticker.1}}</td>
+                                <td>${{ticker.2}}</td>
+                                <td>{{ticker.3}}</td>
+                                <td>{{ticker.4}}</td>
+                                <td>${{ticker.5}}</td>
+                                <td>{{ticker.6}}</td>
+                                <td>{{ticker.7}}%</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

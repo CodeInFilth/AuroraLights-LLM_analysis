@@ -1,0 +1,16 @@
+{
+    "Retail Sales": {
+        "Ref Month": "September 2021",
+        "Release Date": "2021-10-15"
+    },
+    "Inflation": {
+        "Ref Month": "October 2021",
+        "Release Date": "2021-11-10"
+    },
+    "Daily Treasury": {
+        "Release Date": "2021-10-14"
+    },
+    "Reverse Repo": {
+        "Release Date": "2021-10-14"
+    }
+}

@@ -1,0 +1,162 @@
+{% extends "format.html" %}
+{% load static %}
+{% load filter %}
+
+{% block title %}AuroaTrades | Reddit Sentiment{% endblock %}
+
+{% block additional_script %}
+<link rel="stylesheet" href="{% static 'style/reddit_sentiment.css' %}">
+{% endblock %}
+
+{% block onload_properties%}restore_dark_mode();load_graph();check_table();show_subreddit_img('{{subreddit_selected}}'){% endblock %}
+
+{% block main_nav %}
+    <a href="/">AuroaTrades</a> /
+    <a href="/reddit_analysis/?subreddit={{subreddit_selected}}">Reddit Sentiment [{{subreddit_selected}}]</a>
+{% endblock %}
+
+{% block page_header %}Reddit Stocks Trending Posts{% endblock %}
+
+{% block main_content %}
+<div class="container page__container">
+	<div class="page-section">	
+	
+	    <div class="contents_div card">
+	        <form action="" method="GET" autocomplete="off" style="margin-top: 25px;margin-left: 25px;">
+	            <div class="select_div">
+	                <select name="subreddit" onchange="this.form.submit()">
+	                    <option>Selected: {{subreddit_selected}}</option>
+	                    <option value="wallstreetbets">Wall Street Bets</option>
+	                    <option value="stocks">Stocks</option>
+	                    <option value="options">Options</option>
+	                    <option value="pennystocks">Pennystocks</option>
+	                    <option value="shortsqueeze">Short Squeeze</option>
+	                    <option value="spacs">SPACs</option>
+	                    <option value="cryptocurrency">Cryptocurrency</option>
+	                </select>
+	                <select name="date_selected" onchange="this.form.submit()">
+	                    <option>Date: {{date_selected}}</option>
+	                    {% for date in all_dates %}
+	                        <option value="{{date}}">{{date}}</option>
+	                    {% endfor %}
+	                </select>
+	            </div>
+	        </form>
+
+	        <div class="subreddit_intro" style="margin: 25px"></div>
+	
+	        <div class="chart-container">
+	            <canvas id="score_chart"></canvas>
+	        </div>
+	
+	<!--        <div class="chart-container">-->
+	<!--            <canvas id="industry_chart"></canvas>-->
+	<!--        </div>-->
+	
+	        <div id="filter_section">
+	            <div class="input-group input-group-merge" style="width: 275px;margin: auto;padding-top: 15px;">
+				    <input type="text" class="form-control form-control-prepended" id="search_ticker" onkeyup="searchTicker()" placeholder="Ticker Search">
+				    <div class="input-group-prepend">
+				        <div class="input-group-text">
+				            <span class="material-icons">remove_red_eye</span>
+				        </div>
+				    </div><div class="filter_contents" style="margin: 0; margin-left: 10px;" onclick="reset_table();searchTicker()"><a type="button" class="btn btn-accent btn-sm">Reset</a></div>
+				</div>
+	        <div style="margin: 25px; width: 100%; display: block;">
+	            <div id="2-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">48H Score &#x2716;</a></div>
+	            <div id="3-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">24H Score &#x2716;</a></div>
+	            <div id="4-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">24H to 48H Score &#x2716;</a></div>
+	            <div id="5-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">% Score Change &#x2716;</a></div>
+	            <div id="6-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">1mo Chart &#x2716;</a></div>
+	            <div id="7-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">Posts &#x2716;</a></div>
+	            <div id="8-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">Upvotes &#x2716;</a></div>
+
+	            <div id="9-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">Comments &#x2716;</a></div>
+	            <div id="10-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">Previous Close &#x2716;</a></div>
+	            <div id="11-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">Volume &#x2716;</a></div>
+	            <div id="12-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">Market Cap &#x2716;</a></div>
+	            <div id="13-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">1D % Price Change &#x2716;</a></div>
+	            <div id="14-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">50D Average &#x2716;</a></div>
+
+	            <div id="15-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">Floating Shares &#x2716;</a></div>
+	            <div id="16-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">Beta &#x2716;</a></div>
+	            <div id="17-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">Shares/Float &#x2716;</a></div>
+	            <div id="18-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">Price Target &#x2716;</a></div>
+	            <div id="19-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">Recommend &#x2716;</a></div>
+	            <div id="20-filter" class="filter_contents" onclick="filter_table(this)"><a type="button" class="btn btn-secondary btn-sm">Industry &#x2716;</a></div>
+	            
+	        </div>
+	            <br/>
+
+	        </div>
+	
+	        <div class="click_table_info"><b>Click on ticker symbol for more info.</b></div>
+	
+	        <div id="reddit_table_section">
+	            <div style="overflow-x:scroll;">
+	                <table id="reddit_table">
+	                    <thead>
+	                        <tr>
+	                            <th onclick="sortTable(0)" class="th-sort-desc" id='0'>Rank</th>
+	                            <th onclick="sortTable(1)" class="th-sort-desc" id='1'>Ticker</th>
+	                            <th onclick="sortTable(2)" class="th-sort-desc" id='2'>48H Score</th>
+	                            <th onclick="sortTable(3)" class="th-sort-desc" id='3'>24H Score</th>
+	                            <th onclick="sortTable(4)" class="th-sort-desc" id='4'>24H to 48H Score</th>
+	                            <th onclick="sortTable(5)" class="th-sort-desc" id='5'>% Score Change</th>
+	                            <th id="6">1mo Chart</th>
+	                            <th onclick="sortTable(7)" class="th-sort-desc" id='7'>Posts</th>
+	                            <th onclick="sortTable(8)" class="th-sort-desc" id='8'>Upvotes</th>
+	                            <th onclick="sortTable(9)" class="th-sort-desc" id='9'>Comments</th>
+	                            <th onclick="sortTable(10)" class="th-sort-desc" id='10'>Previous Close</th>
+	                            <th onclick="sortTable(11)" class="th-sort-desc" id='11'>Volume</th>
+	                            <th onclick="sortTable(12)" class="th-sort-desc" id='12'>Mkt Cap</th>
+	                            <th onclick="sortTable(13)" class="th-sort-desc" id='13'>1D % Price Change</th>
+	                            <th onclick="sortTable(14)" class="th-sort-desc" id='14'>50D Average</th>
+	                            <th onclick="sortTable(15)" class="th-sort-desc" id='15'>Floating Shares</th>
+	                            <th onclick="sortTable(16)" class="th-sort-desc" id='16'>Beta</th>
+	                            <th onclick="sortTable(17)" class="th-sort-desc" id='17'>Shorts/Float</th>
+	                            <th onclick="sortTable(18)" class="th-sort-desc" id='18'>Price Target</th>
+	                            <th onclick="sortTable(19)" class="th-sort-desc" id='19'>Recommend</th>
+	                            <th onclick="sortTable(20)" class="th-sort-desc" id='20'>Industry</th>
+	                        </tr>
+	                    </thead>
+	                    <tbody>
+	                        {% for ticker in trending_tickers %}
+	                        <tr>
+	                            <td>{{ticker.0}}</td>
+	                            <td><a href="{% url 'reddit_ticker_analysis' %}?quote={{ticker.1}}&subreddit={{subreddit_selected}}" target="_blank"><img class="table_ticker_logo" src="https://g.foolcdn.com/art/companylogos/mark/{{ticker.1}}.png" onerror="this.error=null;load_table_error_img(this, '{{ticker.1}}')"><u><b>{{ticker.1}}</b></u></a></td>
+	                            <td>{{ticker.2}}</td>
+	                            <td>{{ticker.3}}</td>
+	                            <td>{{ticker.4}}</td>
+	                            <td>{{ticker.5}}</td>
+	                            <td class="price_chart_cell"></td>
+	                            <td>{{ticker.7}}</td>
+	                            <td>{{ticker.8}}</td>
+	                            <td>{{ticker.9}}</td>
+	                            <td>${{ticker.10}}</td>
+	                            <td>{{ticker.13}}</td>
+	                            <td>{{ticker.14}}</td>
+	                            <td>{{ticker.11}}</td>
+	                            <td>{{ticker.12}}</td>
+	                            <td>{{ticker.15}}</td>
+	                            <td>{{ticker.16}}</td>
+	                            <td>{{ticker.17}}</td>
+	                            <td>{{ticker.24}}</td>
+	                            <td class="reformat_text">{{ticker.25}}</td>
+	                            <td>{{ticker.18}}</td>
+	                        </tr>
+	                        {% endfor %}
+	                    </tbody>
+	                </table>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</div>
+{% endblock %}
+
+{% block bottom_script %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.bundle.min.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>-->
+<script src="{% static 'javascript/reddit_sentiment.js' %}"></script>
+{% endblock %}

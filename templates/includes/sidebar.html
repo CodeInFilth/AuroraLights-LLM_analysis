@@ -1,0 +1,409 @@
+{% load static %}
+            <!-- Drawer -->
+
+            <div class="mdk-drawer js-mdk-drawer"
+                 id="default-drawer">
+                <div class="mdk-drawer__content">
+                    <div class="sidebar sidebar-dark sidebar-black-dodger-blue sidebar-left ps ps--active-y"
+                         data-perfect-scrollbar>
+
+							{% if ticker_selected|length > 0 %}
+								{% if request.path == "/ticker/" %}
+							<div class="d-flex align-items-center navbar-height">
+	                            <form action="/ticker/" class="search-form search-form--black mx-16pt pr-0 pl-16pt">
+		                            <input type="text" class="form-control pl-0" name="quote" id="quote" value="{{ticker_selected}}" placeholder="Ticker:" autocomplete="off">
+	                                <button class="btn" type="submit"><i class="material-icons">search</i></button>
+	                            </form>
+	                        </div>
+								{% endif %}
+								{% if request.path == "/ticker/options/" %}
+							<div class="d-flex align-items-center navbar-height">
+	                            <form action="/ticker/options/" class="search-form search-form--black mx-16pt pr-0 pl-16pt">
+	                                <input type="text" class="form-control pl-0" name="quote" id="quote" value="{{ticker_selected}}" placeholder="Ticker:" autocomplete="off">
+	                                <button class="btn" type="submit"><i class="material-icons">search</i></button>
+	                            </form>
+	                        </div>		
+								{% endif %}				
+								{% if request.path == "/ticker/financial/" %}
+							<div class="d-flex align-items-center navbar-height">
+	                            <form action="/ticker/financial/" class="search-form search-form--black mx-16pt pr-0 pl-16pt">
+	                                <input type="text" class="form-control pl-0" name="quote" id="quote" value="{{ticker_selected}}" placeholder="Ticker:" autocomplete="off">
+	                                <button class="btn" type="submit"><i class="material-icons">search</i></button>
+	                            </form>
+	                        </div>
+								{% endif %}
+								{% if request.path == "/ticker/short_volume/" %}
+							<div class="d-flex align-items-center navbar-height">
+	                            <form action="/ticker/short_volume/" class="search-form search-form--black mx-16pt pr-0 pl-16pt">
+	                                <input type="text" class="form-control pl-0" name="quote" id="quote" value="{{ticker_selected}}" placeholder="Ticker:" autocomplete="off">
+	                                <button class="btn" type="submit"><i class="material-icons">search</i></button>
+	                            </form>
+	                        </div>
+								{% endif %}
+								{% if request.path == "/ticker/failure_to_deliver/" %}
+							<div class="d-flex align-items-center navbar-height">
+	                            <form action="/ticker/failure_to_deliver/" class="search-form search-form--black mx-16pt pr-0 pl-16pt">
+	                                <input type="text" class="form-control pl-0" name="quote" id="quote" value="{{ticker_selected}}" placeholder="Ticker:" autocomplete="off">
+	                                <button class="btn" type="submit"><i class="material-icons">search</i></button>
+	                            </form>
+	                        </div>
+								{% endif %}
+							{% else %}
+						<div class="d-flex align-items-center navbar-height">
+                            <form action="/ticker/" class="search-form search-form--black mx-16pt pr-0 pl-16pt">
+                                <input id="quote" name="quote" type="quote" class="form-control pl-0" placeholder="Search">
+                                <button class="btn" type="submit"><i class="material-icons">search</i></button>
+                            </form>
+                        </div>
+					{% endif %}
+
+                        <a href=""
+                           class="sidebar-brand sidebar-brand-dark">
+                            
+
+                            <span class="avatar avatar-xl sidebar-brand-icon h-auto">
+
+							<img src="{%  static 'auroraLights/icon-aurora--gradient.png' %}"
+                                         class="img-fluid"
+                                         alt="logo" />
+
+
+
+                            </span>
+
+                            <span class="avatar avatar-xl sidebar-brand-icon h-auto" style="margin-left: 0.5rem;">
+                            	<img class="sidebar-brand-icon h-auto" src="{%  static 'auroraLights/logo_l.png' %}" alt="Luma">
+                            </span>
+                        </a>
+
+                        <div class="sidebar-heading">Student</div>
+                        <ul>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button"
+                                   href="/">
+                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">dashboard</span>
+                                    <span class="sidebar-menu-text">Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item {% if ticker_selected|length > 0 %}{% if request.path == "/ticker/" %} open {% endif %}{% if request.path == "/ticker/options/" %} open {% endif %}	{% if request.path == "/ticker/financial/" %} open {% endif %}{% if request.path == "/ticker/short_volume/" %} open {% endif %}{% if request.path == "/ticker/failure_to_deliver/" %} open {% endif %}{% endif %}">
+                                <a class="sidebar-menu-button js-sidebar-collapse {% if ticker_selected|length > 0 %}{% if request.path == "/ticker/" %} collapsed {% endif %}{% if request.path == "/ticker/options/" %} collapsed {% endif %}	{% if request.path == "/ticker/financial/" %} collapsed {% endif %}{% if request.path == "/ticker/short_volume/" %} collapsed {% endif %}{% if request.path == "/ticker/failure_to_deliver/" %} collapsed {% endif %}{% endif %}"
+                                   data-toggle="collapse"
+                                   href="#enterprise_menu">
+                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">donut_large</span>
+                                    Stocks
+                                    <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                </a>
+                                <ul class="sidebar-submenu sm-indent collapse {% if request.path == '/ticker/' %}show{% endif %}"
+                                    id="enterprise_menu">
+									{% if ticker_selected|length > 0 %}
+										{% if request.path == "/ticker/" %}
+                                    <li class="sidebar-menu-item active">
+                                        <a class="sidebar-menu-button"
+                                           href="/ticker/?quote={{ticker_selected}}">
+                                            <span class="sidebar-menu-text">Basic Analysis</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="/ticker/financial/?quote={{ticker_selected}}">
+                                            <span class="sidebar-menu-text">Financial Stats</span>
+                                        </a>
+                                    </li>
+									<li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button disabled" href="">
+                                            <span class="sidebar-menu-text">Options Wall</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="/ticker/short_volume/?quote={{ticker_selected}}">
+                                            <span class="sidebar-menu-text">Short Volume</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="/ticker/failure_to_deliver/?quote={{ticker_selected}}">
+                                            <span class="sidebar-menu-text">Failure to Deliver</span>
+                                        </a>
+                                    </li>
+									{% endif %}
+									{% if request.path == "/ticker/financial/" %}
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="/ticker/?quote={{ticker_selected}}">
+                                            <span class="sidebar-menu-text">Basic Analysis</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item active">
+                                        <a class="sidebar-menu-button"
+                                           href="/ticker/financial/?quote={{ticker_selected}}">
+                                            <span class="sidebar-menu-text">Financial Stats</span>
+                                        </a>
+                                    </li>
+									<li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button disabled" href="">
+                                            <span class="sidebar-menu-text">Options Wall</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="/ticker/short_volume/?quote={{ticker_selected}}">
+                                            <span class="sidebar-menu-text">Short Volume</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="/ticker/failure_to_deliver/?quote={{ticker_selected}}">
+                                            <span class="sidebar-menu-text">Failure to Deliver</span>
+                                        </a>
+                                    </li>
+									{% endif %}
+									{% if request.path == "/ticker/options/" %}
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="/ticker/?quote={{ticker_selected}}">
+                                            <span class="sidebar-menu-text">Basic Analysis</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="/ticker/financial/?quote={{ticker_selected}}">
+                                            <span class="sidebar-menu-text">Financial Stats</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item active">
+                                        <a class="sidebar-menu-button"
+                                           href="/ticker/options/?quote={{ticker_selected}}">
+                                            <span class="sidebar-menu-text">Options Wall</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="/ticker/short_volume/?quote={{ticker_selected}}">
+                                            <span class="sidebar-menu-text">Short Volume</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="/ticker/failure_to_deliver/?quote={{ticker_selected}}">
+                                            <span class="sidebar-menu-text">Failure to Deliver</span>
+                                        </a>
+                                    </li>
+	
+									{% endif %}
+									{% if request.path == "/ticker/short_volume/" %}
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="/ticker/?quote={{ticker_selected}}">
+                                            <span class="sidebar-menu-text">Basic Analysis</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="/ticker/financial/?quote={{ticker_selected}}">
+                                            <span class="sidebar-menu-text">Financial Stats</span>
+                                        </a>
+                                    </li>
+									<li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button disabled" href="">
+                                            <span class="sidebar-menu-text">Options Wall</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item active">
+                                        <a class="sidebar-menu-button"
+                                           href="/ticker/short_volume/?quote={{ticker_selected}}">
+                                            <span class="sidebar-menu-text">Short Volume</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="/ticker/failure_to_deliver/?quote={{ticker_selected}}">
+                                            <span class="sidebar-menu-text">Failure to Deliver</span>
+                                        </a>
+                                    </li>
+
+									{% endif %}
+									{% if request.path == "/ticker/failure_to_deliver/" %}
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="/ticker/?quote={{ticker_selected}}">
+                                            <span class="sidebar-menu-text">Basic Analysis</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="/ticker/financial/?quote={{ticker_selected}}">
+                                            <span class="sidebar-menu-text">Financial Stats</span>
+                                        </a>
+                                    </li>
+									<li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button disabled" href="">
+                                            <span class="sidebar-menu-text">Options Wall</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="/ticker/short_volume/?quote={{ticker_selected}}">
+                                            <span class="sidebar-menu-text">Short Volume</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item active">
+                                        <a class="sidebar-menu-button"
+                                           href="/ticker/failure_to_deliver/?quote={{ticker_selected}}">
+                                            <span class="sidebar-menu-text">Failure to Deliver</span>
+                                        </a>
+                                    </li>
+									{% endif %}
+									{% else %}
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="/ticker">
+                                            <span class="sidebar-menu-text">Basic Analysis</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="/ticker/financial/">
+                                            <span class="sidebar-menu-text">Financials Stats</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button disabled" href="">
+                                            <span class="sidebar-menu-text">Options Wall</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="/ticker/short_volume/">
+                                            <span class="sidebar-menu-text">Short Volume</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="/ticker/failure_to_deliver/">
+                                            <span class="sidebar-menu-text">Failure to Deliver</span>
+                                        </a>
+                                    </li>  
+									{% endif %}                                  
+                                </ul>
+                            </li>
+							<li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" data-toggle="collapse" href="#community_menu">
+                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">people_outline</span>
+                                    Social Sentiments
+<!--                                     <span class="sidebar-menu-badge badge badge-accent badge-notifications ml-auto">PRO</span> -->
+                                    <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                </a>
+                                <ul class="sidebar-submenu collapse sm-indent" id="community_menu">
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button" href="/reddit_analysis/">
+
+                                            <span class="sidebar-menu-text">Reddit Stocks</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button" href="/reddit_analysis/?subreddit=cryptocurrency">
+
+                                            <span class="sidebar-menu-text">Reddit Crypto</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button" href="/subreddit_count/">
+
+                                            <span class="sidebar-menu-text">Subreddit Analysis</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button disabled" href="">
+                                            <span class="sidebar-menu-text">Twitter Stocks</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button disabled" href="">
+                                            <span class="sidebar-menu-text">Twitter Crypto</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button disabled" href="">
+                                            <span class="sidebar-menu-text">Twitter Analysis</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+							<li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button collapsed" data-toggle="collapse" href="#ecommerce_menu" aria-expanded="false">
+                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">trending_up</span>
+                                    Market Analysis
+                                    <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                </a>
+                                <ul class="sidebar-submenu sm-indent collapse" id="ecommerce_menu" style="">
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button" href="/reverse_repo/">
+                                            <span class="sidebar-menu-text">Repo Transactions</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button" href="/daily_treasury/">
+                                            <span class="sidebar-menu-text">Treasury Info</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button" href="/inflation/">
+                                            <span class="sidebar-menu-text">Inflation</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button" href="/reverse_repo/">
+                                            <span class="sidebar-menu-text">Retail Analysis</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button" href="/ticker/failure_to_deliver/?quote=top_ftd">
+                                            <span class="sidebar-menu-text">Top Failure to Deliver</span>
+                                        </a>
+                                    </li>
+                                </ul>
+								<li class="sidebar-menu-item">
+	                                <a class="sidebar-menu-button" href="/latest_insider/">
+	                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">face</span>
+	                                    <span class="sidebar-menu-text">Insider Analysis</span>
+	                                </a>
+	                            </li>
+								<li class="sidebar-menu-item">
+	                                <a class="sidebar-menu-button" href="/ark_trades/">
+	                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">poll</span>
+	                                    <span class="sidebar-menu-text">ARK Funds</span>
+	                                </a>
+	                            </li>
+								<li class="sidebar-menu-item">
+	                                <a class="sidebar-menu-button" href="/short_interest/">
+	                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">dvr</span>
+	                                    <span class="sidebar-menu-text">Short Interest</span>
+	                                </a>
+	                            </li>
+                                <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button disabled" href="edit-/retail_sales/">
+                                        <span class="sidebar-menu-text">Options Flow</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button disabled" href="edit-/retail_sales/">
+                                        <span class="sidebar-menu-text">Dark-pool Analysiss</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-menu-item">
+                                    <a class="sidebar-menu-button disabled" href="edit-/retail_sales/">
+                                        <span class="sidebar-menu-text">Merger Compare</span>
+                                    </a>
+                                </li>
+                            </li>
+                        </ul>
+                        
+
+                        <!-- // END Sidebar Content -->
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- // END Drawer -->
