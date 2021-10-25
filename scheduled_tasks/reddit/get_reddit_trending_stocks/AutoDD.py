@@ -394,11 +394,10 @@ def print_df(df, filename, writesql, writecsv, subreddit):
 
     # Save to sql database
     if writesql:
+        #conn = create_engine('mysql+mysqlconnector://auroratrades:Moneydick42069!@localhost:3306/skynet_aurora', echo=False)
         for row_num in range(len(df)):
             db.execute(
-                "INSERT INTO {} VALUES "
-                "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL)".format(subreddit),
-                tuple(df.loc[row_num].tolist()))
+                "INSERT INTO {} VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL)".format(subreddit),tuple(df.loc[row_num].tolist()))
             conn.commit()
         print("Saved to {} SQL Database successfully.".format(subreddit))
 
