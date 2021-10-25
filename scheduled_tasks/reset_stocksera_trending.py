@@ -1,6 +1,9 @@
-import sqlite3
-
-conn = sqlite3.connect("database/database.db", check_same_thread=False)
+import mysql.connector
+from mysql.connector import Error
+conn = mysql.connector.connect(host='localhost',
+                                    database='skynet_aurora',
+                                    user='auroratrades',
+                                    password='Moneydick42069!')
 db = conn.cursor()
 
 

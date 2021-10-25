@@ -321,7 +321,8 @@ def get_mkt_cap():
     print(threshold_hour, "onwards being saved to yf database")
 
     ticker_list, mentions_list = list(), list()
-    db.execute("SELECT ticker, SUM(mentions) FROM wsb_trending_24H WHERE date_updated > % GROUP BY ticker ORDER BY SUM(mentions) DESC LIMIT 50", int(float(threshold_datetime)))
+#    db.execute("SELECT ticker, SUM(mentions) FROM `skynet_aurora`.`wsb_trending_24H` WHERE date_updated > {} DESC".format(threshold_datetime))
+    db.execute("SELECT ticker, SUM(mentions) FROM `skynet_aurora`.`wsb_trending_24H` WHERE `date_updated` >= '{}' GROUP BY `ticker` ORDER BY SUM(mentions) DESC LIMIT 50 OFFSET 0".format(threshold_datetime))
     x = db.fetchall()
     for row in x:
         ticker_list.append(row[0])
@@ -355,6 +356,8 @@ def get_mkt_cap():
     del quick_stats_df["52w_high"]
     del quick_stats_df["52w_low"]
 
+    conn = create_engine('mysql+mysqlconnector://auroratrades:Moneydick42069!@localhost:3306/skynet_aurora', echo=False)
+    
     quick_stats_df = quick_stats_df.reindex(ticker_list)
     quick_stats_df["mentions"] = mentions_list
     quick_stats_df.reset_index(inplace=True)

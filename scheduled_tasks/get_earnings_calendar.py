@@ -2,7 +2,8 @@ import os
 import sys
 from datetime import datetime, timedelta
 import requests
-import sqlite3
+import mysql.connector
+from mysql.connector import Error
 import pandas as pd
 from bs4 import BeautifulSoup
 
@@ -10,7 +11,10 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '../'))
 
 import scheduled_tasks.reddit.get_reddit_trending_stocks.fast_yahoo as fast_yahoo
 
-conn = sqlite3.connect(r"database/database.db", check_same_thread=False)
+conn = mysql.connector.connect(host='localhost',
+                                    database='skynet_aurora',
+                                    user='auroratrades',
+                                    password='Moneydick42069!')
 db = conn.cursor()
 
 

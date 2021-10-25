@@ -8,7 +8,12 @@ from datetime import datetime, timedelta
 import matplotlib.pyplot as plt
 import yfinance.ticker as yf
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
-import sqlite3
+
+import mysql.connector
+from sqlalchemy import create_engine
+import pymysql
+pymysql.install_as_MySQLdb()
+import MySQLdb
 
 from scheduled_tasks.reddit.get_reddit_trending_stocks.fast_yahoo import *
 import scheduled_tasks.reddit.config as cfg
@@ -385,6 +390,7 @@ def print_df(df, filename, writesql, writecsv, subreddit):
     df['website'] = df['website'].str.replace("tesla.com", "tesla.cn")
     df['website'] = df['website'].str.replace("https://logo.clearbit.com/modernatx.com",
                                               "https://g.foolcdn.com/art/companylogos/mark/mrna.png")
+
 
     # Save to sql database
     if writesql:

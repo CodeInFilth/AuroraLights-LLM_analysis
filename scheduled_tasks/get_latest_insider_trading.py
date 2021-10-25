@@ -1,6 +1,7 @@
 import os
 import sys
-import sqlite3
+import mysql.connector
+from mysql.connector import Error
 import pandas as pd
 from datetime import datetime, timedelta
 from finvizfinance.insider import Insider
@@ -8,7 +9,10 @@ from finvizfinance.insider import Insider
 sys.path.append(os.path.join(os.path.dirname(__file__), "../"))
 from scheduled_tasks.reddit.get_reddit_trending_stocks.fast_yahoo import download_quick_stats
 
-conn = sqlite3.connect(r"database/database.db", check_same_thread=False)
+conn = mysql.connector.connect(host='localhost',
+                                    database='skynet_aurora',
+                                    user='auroratrades',
+                                    password='Moneydick42069!')
 db = conn.cursor()
 
 

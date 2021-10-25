@@ -1,9 +1,13 @@
 import requests
 import os
-import sqlite3
+import mysql.connector
+from mysql.connector import Error
 from datetime import datetime
 
-conn = sqlite3.connect(r"database/database.db", check_same_thread=False)
+conn = mysql.connector.connect(host='localhost',
+                                    database='skynet_aurora',
+                                    user='auroratrades',
+                                    password='Moneydick42069!')
 db = conn.cursor()
 
 # https://developer.twitter.com/en/portal/dashboard
