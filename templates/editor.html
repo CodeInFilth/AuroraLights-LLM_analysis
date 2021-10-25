@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="main">
+    <div class "row">
+        <div id="error-div" style="display: none; flex-direction: column">
+            <span id="error-note" class="note danger"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="container">
+                <form id="embed_builder">
+                    <div class="col-md-12">
+                        <label class="input-wrapper">
+                            <p class="label title text">Title</p>
+                            <input class="input change-trigger" placeholder="Embed Title" maxlength="256" name="" type="text" value="{{embed_data.title}}" id="title"/>
+                        </label>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <label class="input-wrapper">
+                                <p class="label title text">Header</p>
+                                <input class="input change-trigger" placeholder="Embed Header" maxlength="256" name="" type="text" value="{{embed_data.header}}" id="header"/>
+                            </label>
+                        </div>
+                        <div class="col-md-1">
+                            <label class="input-wrapper">
+                                <p class="label title text">Color</p>
+                                <input type="color" class="form-control-color change-trigger color-input" value="333" id="color">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="input-wrapper">
+                            <p class="label title text">DESCRIPTION</p>
+                            <textarea class="input textarea change-trigger" placeholder="Embed Description" name="" maxlength="2048" type="text" id="description">{{embed_data.description}}</textarea>
+                        </label>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <label class="input-wrapper">
+                                <p class="label title text">IMAGE URL</p>
+                                <input class="input change-trigger" placeholder="Embed Image URL" name="" type="text" value="{{embed_data.image_url}}" id="image_url"/>
+                            </label>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="checkbox checkbox-margin">
+                                <p class="label title text">USE IMAGE AS BANNER</p>
+                                <input type="checkbox" class="change-trigger" checked="true" id="is_banner"/>
+                                <span class="checkmark">
+                                <i class="icon check"></i>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 1rem;">
+                        <div class="col-auto">
+                            <button type="submit" class="button primary">Generate URL</button>
+                        </div>
+
+                    </div>
+                    <div class="col-md-12">
+                        <label class="input-wrapper">
+                            <p class="label title text">Your URL</p>
+                            <input class="input" id="url_output" placeholder="input Placeholder" name="" type="text" value="{{request.url}}" readonly/>
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="container">
+                <div class="col-md-12">
+                    <label class="input-wrapper">
+                        <p class="label title text">Preview</p>
+                        <div id="embed_container" style="max-width: 530px;">
+<div class="embed" id="embed_root" style="border-left-color: #36393F;">
+    <div class="embed-primary-container">
+        <div class="embed-secondary-container"/>
+            <span id="embed_header" class="embed-author embed-author-name embed-urllike-header" style="display: none;"></span>
+            <a class="embed-title text link" id="embed_title" style="display: none;"></a>
+            <span class="embed-description" id="embed_description" style="display: none;"></span>
+        </div>
+    <img src="" id="embed_thumbnail" style="display: none;" class="embed-thumpnail loading-preview"></img>
+    </div>
+    <img src="" id="embed_image" style="display: none;" class="embed-image loading-preview"></img>
+</div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<button onClick="window.location.href=window.location.href">Refresh Page</button>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'builder.js' %}"></script>
+{% endblock %}

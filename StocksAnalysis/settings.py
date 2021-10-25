@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions.backends.db',
     'django.contrib.staticfiles',
     'templatetags.filter',
+    "sslserver"
 ]
 
 MIDDLEWARE = [

@@ -8,7 +8,7 @@ import numpy as np
 import yfinance as yf
 from datetime import datetime, timedelta
 
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.append(os.path.join(os.path.dirname(__file__), '../'))
 from scheduled_tasks.get_popular_tickers import full_ticker_list
 import scheduled_tasks.reddit.get_reddit_trending_stocks.fast_yahoo as fast_yahoo
 

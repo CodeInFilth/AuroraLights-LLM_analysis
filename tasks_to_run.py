@@ -3,7 +3,8 @@ Compilation of scheduled tasks to run
 """
 
 import os
-import sqlite3
+import mysql.connector
+from mysql.connector import Error
 from pathlib import Path
 import scheduled_tasks.create_database as create_database
 import scheduled_tasks.reddit.get_reddit_trending_stocks.scrape_reddit as scrape_reddit_stocks
@@ -103,7 +104,10 @@ if __name__ == '__main__':
         get_twitter_followers.main()
 
     if UPDATE_REDDIT_ETF:
-        conn = sqlite3.connect(r"database/database.db", check_same_thread=False)
+        conn = mysql.connector.connect(host='localhost',
+                                    database='skynet_aurora',
+                                    user='auroratrades',
+                                    password='Moneydick42069!')
         db = conn.cursor()
         db.execute("SELECT date_updated FROM wallstreetbets ORDER BY ID DESC LIMIT 1")
         db_date = db.fetchone()[0]
@@ -136,7 +140,7 @@ if __name__ == '__main__':
 
     if FTD:
         get_failure_to_deliver.download_ftd()
-        FOLDER_PATH = r"/root/2_aurora---Staging/AuroraLights-Online/AuroraLights_ver1/database/failure_to_deliver/csv"
+        FOLDER_PATH = r"database/failure_to_deliver/csv"
         get_failure_to_deliver.combine_df(folder_path=FOLDER_PATH)
         get_failure_to_deliver.get_top_ftd(sorted(Path(FOLDER_PATH).iterdir(), key=os.path.getmtime)[0])
 

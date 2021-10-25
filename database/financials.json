@@ -206,7 +206,7 @@
             "Deferred Long Term Liab",
             "Inventory"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "SPY": {
         "date_list": [
@@ -219,7 +219,7 @@
         ],
         "balance_list": [],
         "balance_col_list": [],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "BBIG": {
         "date_list": [
@@ -407,7 +407,7 @@
             "Other Current Assets",
             "Short Term Investments"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "AAPL": {
         "date_list": [
@@ -581,7 +581,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "1337.HK": {
         "date_list": [
@@ -1354,7 +1354,7 @@
             "Accounts Payable",
             "Short Long Term Debt"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "CLOV": {
         "date_list": [
@@ -1549,7 +1549,7 @@
             "Short Long Term Debt",
             "Good Will"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "UWMC": {
         "date_list": [
@@ -1709,7 +1709,7 @@
             "Long Term Debt",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "NIO": {
         "date_list": [
@@ -1904,7 +1904,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "TSLA": {
         "date_list": [
@@ -2092,57 +2092,57 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "NOK": {
         "date_list": [
-            "2020-06-30",
             "2020-09-30",
             "2020-12-31",
-            "2021-03-31"
+            "2021-03-31",
+            "2021-06-30"
         ],
         "balance_list": [
             [
-                2287000000.0,
                 2116000000.0,
                 1953000000.0,
-                1893000000.0
+                1893000000.0,
+                1768000000.0
             ],
             [
-                434000000.0,
                 420000000.0,
                 443000000.0,
-                389000000.0
+                389000000.0,
+                411000000.0
             ],
             [
-                24251000000.0,
                 23585000000.0,
                 23646000000.0,
-                23083000000.0
+                23083000000.0,
+                22328000000.0
             ],
             [
-                15241000000.0,
                 15137000000.0,
                 12465000000.0,
-                13685000000.0
+                13685000000.0,
+                14248000000.0
             ],
             [
-                78000000.0,
                 83000000.0,
                 80000000.0,
-                85000000.0
+                85000000.0,
+                89000000.0
             ],
             [
-                4467000000.0,
                 4298000000.0,
                 4916000000.0,
-                4278000000.0
+                4278000000.0,
+                4254000000.0
             ],
             [
-                39570000000.0,
                 38805000000.0,
                 36191000000.0,
-                36853000000.0
+                36853000000.0,
+                36665000000.0
             ],
             [
                 246000000.0,
@@ -2151,118 +2151,118 @@
                 246000000.0
             ],
             [
-                -1644000000.0,
-                -1452000000.0,
-                -4143000000.0,
-                -3884000000.0
-            ],
-            [
-                6650000000.0,
-                6394000000.0,
-                6149000000.0,
-                5890000000.0
-            ],
-            [
-                5609000000.0,
-                5436000000.0,
-                5074000000.0,
-                5236000000.0
-            ],
-            [
-                16205000000.0,
-                15923000000.0,
-                15919000000.0,
-                16934000000.0
-            ],
-            [
-                10169000000.0,
-                10002000000.0,
-                7077000000.0,
-                7469000000.0
-            ],
-            [
-                7088000000.0,
-                6836000000.0,
-                6940000000.0,
-                7315000000.0
-            ],
-            [
-                11691000000.0,
-                11373000000.0,
-                11761000000.0,
-                11326000000.0
-            ],
-            [
-                5009000000.0,
-                4844000000.0,
-                1822000000.0,
-                1622000000.0
-            ],
-            [
-                16557000000.0,
-                16275000000.0,
-                16271000000.0,
-                17286000000.0
-            ],
-            [
-                2627000000.0,
-                2572000000.0,
-                2588000000.0,
-                2719000000.0
-            ],
-            [
-                17582000000.0,
-                17418000000.0,
-                18215000000.0,
-                18132000000.0
-            ],
-            [
-                1296000000.0,
-                1261000000.0,
-                1284000000.0,
-                1404000000.0
-            ],
-            [
-                7345000000.0,
-                7585000000.0,
-                5438000000.0,
-                6556000000.0
-            ],
-            [
-                605000000.0,
-                1045000000.0,
-                1185000000.0,
-                1715000000.0
-            ],
-            [
-                6171000000.0,
-                5855000000.0,
-                7679000000.0,
-                5982000000.0
-            ],
-            [
-                5181000000.0,
-                5099000000.0,
-                5015000000.0,
-                5039000000.0
-            ],
-            [
-                2865000000.0,
-                2745000000.0,
-                2242000000.0,
-                2266000000.0
-            ],
-            [
-                3255000000.0,
-                3167000000.0,
-                3174000000.0,
-                3108000000.0
-            ],
-            [
-                0.0,
                 0.0,
                 169000000.0,
-                0.0
+                0.0,
+                -1000000.0
+            ],
+            [
+                -1452000000.0,
+                -4143000000.0,
+                -3884000000.0,
+                -3541000000.0
+            ],
+            [
+                6394000000.0,
+                6149000000.0,
+                5890000000.0,
+                5489000000.0
+            ],
+            [
+                5436000000.0,
+                5074000000.0,
+                5236000000.0,
+                5270000000.0
+            ],
+            [
+                15923000000.0,
+                15919000000.0,
+                16934000000.0,
+                17132000000.0
+            ],
+            [
+                10002000000.0,
+                7077000000.0,
+                7469000000.0,
+                7409000000.0
+            ],
+            [
+                6836000000.0,
+                6940000000.0,
+                7315000000.0,
+                7252000000.0
+            ],
+            [
+                11373000000.0,
+                11761000000.0,
+                11326000000.0,
+                11528000000.0
+            ],
+            [
+                4844000000.0,
+                1822000000.0,
+                1622000000.0,
+                1502000000.0
+            ],
+            [
+                16275000000.0,
+                16271000000.0,
+                17286000000.0,
+                17484000000.0
+            ],
+            [
+                2572000000.0,
+                2588000000.0,
+                2719000000.0,
+                2706000000.0
+            ],
+            [
+                17418000000.0,
+                18215000000.0,
+                18132000000.0,
+                18198000000.0
+            ],
+            [
+                1261000000.0,
+                1284000000.0,
+                1404000000.0,
+                1314000000.0
+            ],
+            [
+                7585000000.0,
+                5438000000.0,
+                6556000000.0,
+                7210000000.0
+            ],
+            [
+                1045000000.0,
+                1185000000.0,
+                1715000000.0,
+                1682000000.0
+            ],
+            [
+                5855000000.0,
+                7679000000.0,
+                5982000000.0,
+                5992000000.0
+            ],
+            [
+                5099000000.0,
+                5015000000.0,
+                5039000000.0,
+                4504000000.0
+            ],
+            [
+                2745000000.0,
+                2242000000.0,
+                2266000000.0,
+                2392000000.0
+            ],
+            [
+                3167000000.0,
+                3174000000.0,
+                3108000000.0,
+                3119000000.0
             ]
         ],
         "balance_col_list": [
@@ -2274,6 +2274,7 @@
             "Other Current Liab",
             "Total Assets",
             "Common Stock",
+            "Other Current Assets",
             "Retained Earnings",
             "Other Liab",
             "Good Will",
@@ -2291,54 +2292,53 @@
             "Net Receivables",
             "Long Term Debt",
             "Inventory",
-            "Accounts Payable",
-            "Other Current Assets"
+            "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "AMD": {
         "date_list": [
-            "2020-06-27",
             "2020-09-26",
             "2020-12-26",
-            "2021-03-27"
+            "2021-03-27",
+            "2021-06-26"
         ],
         "balance_list": [
             [
-                174000000.0,
                 194000000.0,
                 229000000.0,
-                203000000.0
+                203000000.0,
+                204000000.0
             ],
             [
-                10127000000.0,
                 10362000000.0,
                 10544000000.0,
-                10658000000.0
+                10658000000.0,
+                10795000000.0
             ],
             [
-                3278000000.0,
                 3156000000.0,
                 3125000000.0,
-                3570000000.0
+                3570000000.0,
+                3626000000.0
             ],
             [
-                3305000000.0,
                 3867000000.0,
                 5837000000.0,
-                6477000000.0
+                6477000000.0,
+                7065000000.0
             ],
             [
-                68000000.0,
                 72000000.0,
                 34000000.0,
-                96000000.0
+                96000000.0,
+                5000000.0
             ],
             [
-                6583000000.0,
                 7023000000.0,
                 8962000000.0,
-                10047000000.0
+                10047000000.0,
+                10691000000.0
             ],
             [
                 12000000.0,
@@ -2347,16 +2347,16 @@
                 12000000.0
             ],
             [
-                -6776000000.0,
                 -6386000000.0,
                 -4605000000.0,
-                -4058000000.0
+                -4058000000.0,
+                -3348000000.0
             ],
             [
-                150000000.0,
                 161000000.0,
                 177000000.0,
-                155000000.0
+                155000000.0,
+                181000000.0
             ],
             [
                 289000000.0,
@@ -2365,98 +2365,98 @@
                 289000000.0
             ],
             [
-                -58000000.0,
                 -121000000.0,
                 -114000000.0,
-                -135000000.0
+                -135000000.0,
+                -394000000.0
             ],
             [
-                152000000.0,
                 170000000.0,
                 1389000000.0,
-                1371000000.0
+                1371000000.0,
+                1395000000.0
             ],
             [
-                1775000000.0,
                 1296000000.0,
                 1595000000.0,
-                1763000000.0
+                1763000000.0,
+                2623000000.0
             ],
             [
-                2434000000.0,
                 2417000000.0,
                 2417000000.0,
-                2864000000.0
+                2864000000.0,
+                2892000000.0
             ],
             [
-                0.0,
                 0.0,
                 1245000000.0,
-                1162000000.0
+                1162000000.0,
+                1090000000.0
             ],
             [
-                -4000000.0,
                 5000000.0,
                 17000000.0,
-                6000000.0
+                6000000.0,
+                7000000.0
             ],
             [
-                800000000.0,
                 810000000.0,
                 849000000.0,
-                922000000.0
+                922000000.0,
+                918000000.0
             ],
             [
-                5109000000.0,
                 5500000000.0,
                 6143000000.0,
-                7197000000.0
+                7197000000.0,
+                7818000000.0
             ],
             [
-                59000000.0,
                 60000000.0,
                 63000000.0,
-                65000000.0
+                65000000.0,
+                67000000.0
             ],
             [
-                2842000000.0,
                 3384000000.0,
                 5319000000.0,
-                5985000000.0
+                5985000000.0,
+                6572000000.0
             ],
             [
-                0.0,
                 475000000.0,
                 695000000.0,
-                1353000000.0
+                1353000000.0,
+                1170000000.0
             ],
             [
-                1799000000.0,
                 2138000000.0,
                 2076000000.0,
-                2185000000.0
+                2185000000.0,
+                2026000000.0
             ],
             [
-                490000000.0,
                 373000000.0,
                 330000000.0,
+                313000000.0,
                 313000000.0
             ],
             [
-                1324000000.0,
                 1292000000.0,
                 1399000000.0,
-                1653000000.0
+                1653000000.0,
+                1765000000.0
             ],
             [
-                994000000.0,
                 867000000.0,
                 546000000.0,
-                989000000.0
+                989000000.0,
+                872000000.0
             ],
             [
                 4000000.0,
-                4000000.0,
+                0.0,
                 0.0,
                 0.0
             ]
@@ -2489,7 +2489,7 @@
             "Accounts Payable",
             "Other Current Assets"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "NVDA": {
         "date_list": [
@@ -2691,7 +2691,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "MSFT": {
         "date_list": [
@@ -2886,7 +2886,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "RBLX": {
         "date_list": [
@@ -3067,7 +3067,7 @@
             "Accounts Payable",
             "Short Term Investments"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "F": {
         "date_list": [
@@ -3262,7 +3262,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "PLTR": {
         "date_list": [
@@ -3275,7 +3275,7 @@
         ],
         "balance_list": [],
         "balance_col_list": [],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "COIN": {
         "date_list": [
@@ -3456,7 +3456,7 @@
             "Long Term Debt",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "RKT": {
         "date_list": [
@@ -3637,7 +3637,7 @@
             "Long Term Debt",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "MVIS": {
         "date_list": [
@@ -3790,7 +3790,7 @@
             "Treasury Stock",
             "Other Stockholder Equity"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "FUBO": {
         "date_list": [
@@ -3957,7 +3957,7 @@
             "Accounts Payable",
             "Other Current Assets"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "DISCA": {
         "date_list": [
@@ -4159,7 +4159,7 @@
             "Accounts Payable",
             "Deferred Long Term Asset Charges"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "VIAC": {
         "date_list": [
@@ -4354,7 +4354,7 @@
             "Accounts Payable",
             "Short Long Term Debt"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "SNDL": {
         "date_list": [
@@ -4542,7 +4542,7 @@
             "Short Long Term Debt",
             "Long Term Debt"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "SPCE": {
         "date_list": [
@@ -4709,7 +4709,7 @@
             "Net Receivables",
             "Long Term Debt"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "FB": {
         "date_list": [
@@ -4876,7 +4876,7 @@
             "Net Receivables",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "SNAP": {
         "date_list": [
@@ -5050,7 +5050,7 @@
             "Accounts Payable",
             "Other Current Liab"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "OCGN": {
         "date_list": [
@@ -5189,7 +5189,7 @@
             "Long Term Debt",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "QQQ": {
         "date_list": [
@@ -5202,7 +5202,7 @@
         ],
         "balance_list": [],
         "balance_col_list": [],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "TQQQ": {
         "date_list": [
@@ -5215,7 +5215,7 @@
         ],
         "balance_list": [],
         "balance_col_list": [],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "ROKU": {
         "date_list": [
@@ -5396,7 +5396,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "TWTR": {
         "date_list": [
@@ -5591,7 +5591,7 @@
             "Long Term Debt",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "ARKK": {
         "date_list": [
@@ -5604,7 +5604,7 @@
         ],
         "balance_list": [],
         "balance_col_list": [],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "ARKF": {
         "date_list": [
@@ -5617,7 +5617,7 @@
         ],
         "balance_list": [],
         "balance_col_list": [],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "ARKG": {
         "date_list": [
@@ -5630,7 +5630,7 @@
         ],
         "balance_list": [],
         "balance_col_list": [],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "ARKQ": {
         "date_list": [
@@ -5643,7 +5643,7 @@
         ],
         "balance_list": [],
         "balance_col_list": [],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "SQQQ": {
         "date_list": [
@@ -5656,7 +5656,7 @@
         ],
         "balance_list": [],
         "balance_col_list": [],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "INTC": {
         "date_list": [
@@ -5851,7 +5851,7 @@
             "Accounts Payable",
             "Deferred Long Term Asset Charges"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "BABA": {
         "date_list": [
@@ -6032,7 +6032,7 @@
             "Short Term Investments",
             "Long Term Debt"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "IWM": {
         "date_list": [
@@ -6045,7 +6045,7 @@
         ],
         "balance_list": [],
         "balance_col_list": [],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "ROOT": {
         "date_list": [
@@ -6219,7 +6219,7 @@
             "Intangible Assets",
             "Common Stock"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "BA": {
         "date_list": [
@@ -6428,7 +6428,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "SQ": {
         "date_list": [
@@ -6623,7 +6623,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "SHOP": {
         "date_list": [
@@ -6811,7 +6811,7 @@
             "Long Term Debt",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "SE": {
         "date_list": [
@@ -7020,7 +7020,7 @@
             "Accounts Payable",
             "Deferred Long Term Liab"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "VOO": {
         "date_list": [
@@ -7033,7 +7033,7 @@
         ],
         "balance_list": [],
         "balance_col_list": [],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "PYPL": {
         "date_list": [
@@ -7221,7 +7221,7 @@
             "Minority Interest",
             "Deferred Long Term Asset Charges"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "EXPR": {
         "date_list": [
@@ -7374,7 +7374,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "KOSS": {
         "date_list": [
@@ -7506,7 +7506,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "SOFI": {
         "date_list": [
@@ -7687,7 +7687,7 @@
             "Long Term Debt",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "WKHS": {
         "date_list": [
@@ -7868,7 +7868,7 @@
             "Short Long Term Debt",
             "Long Term Investments"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "DIA": {
         "date_list": [
@@ -7881,7 +7881,7 @@
         ],
         "balance_list": [],
         "balance_col_list": [],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "GM": {
         "date_list": [
@@ -8083,7 +8083,7 @@
             "Accounts Payable",
             "Good Will"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "TLRY": {
         "date_list": [
@@ -8278,7 +8278,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "CLNE": {
         "date_list": [
@@ -8480,7 +8480,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "WISH": {
         "date_list": [
@@ -8640,7 +8640,7 @@
             "Deferred Long Term Liab",
             "Other Liab"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "CLF": {
         "date_list": [
@@ -8835,7 +8835,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "GOEV": {
         "date_list": [
@@ -8974,7 +8974,7 @@
             "Deferred Long Term Liab",
             "Other Current Assets"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "DKNG": {
         "date_list": [
@@ -9141,7 +9141,7 @@
             "Net Receivables",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "RIDE": {
         "date_list": [
@@ -9287,7 +9287,7 @@
             "Other Current Liab",
             "Other Current Assets"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "AMZN": {
         "date_list": [
@@ -9482,7 +9482,7 @@
             "Accounts Payable",
             "Intangible Assets"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "GOOG": {
         "date_list": [
@@ -9677,7 +9677,7 @@
             "Accounts Payable",
             "Short Long Term Debt"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "RIOT": {
         "date_list": [
@@ -9837,7 +9837,7 @@
             "Accounts Payable",
             "Minority Interest"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "NFLX": {
         "date_list": [
@@ -10004,7 +10004,7 @@
             "Long Term Debt",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "XPEV": {
         "date_list": [
@@ -10192,7 +10192,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "CRSP": {
         "date_list": [
@@ -10345,7 +10345,7 @@
             "Net Receivables",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "JPM": {
         "date_list": [
@@ -10533,7 +10533,7 @@
             "Accounts Payable",
             "Short Long Term Debt"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "LI": {
         "date_list": [
@@ -10728,7 +10728,7 @@
             "Other Stockholder Equity",
             "Short Long Term Debt"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "C": {
         "date_list": [
@@ -10937,7 +10937,7 @@
             "Accounts Payable",
             "Deferred Long Term Asset Charges"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "ORCL": {
         "date_list": [
@@ -11132,7 +11132,7 @@
             "Long Term Investments",
             "Inventory"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "BYND": {
         "date_list": [
@@ -11278,7 +11278,7 @@
             "Accounts Payable",
             "Other Current Assets"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "NKLA": {
         "date_list": [
@@ -11466,7 +11466,7 @@
             "Deferred Long Term Liab",
             "Inventory"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "CHWY": {
         "date_list": [
@@ -11612,7 +11612,7 @@
             "Accounts Payable",
             "Other Current Assets"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "CLVS": {
         "date_list": [
@@ -11793,7 +11793,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "SNOW": {
         "date_list": [
@@ -11974,7 +11974,7 @@
             "Net Receivables",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "BNGO": {
         "date_list": [
@@ -12141,20 +12141,139 @@
             "Other Current Assets",
             "Short Long Term Debt"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "VBR": {
         "date_list": [
-            "Volume",
-            "Adj Close",
-            "Close",
-            "Low",
-            "High",
-            "Open"
+            "2019-09-30",
+            "2019-12-31",
+            "2020-03-31",
+            "2020-06-30"
         ],
-        "balance_list": [],
-        "balance_col_list": [],
-        "next_update": "2021-10-20"
+        "balance_list": [
+            [
+                433524000.0,
+                433524000.0,
+                595993000.0,
+                595993000.0
+            ],
+            [
+                32601641000.0,
+                32601641000.0,
+                26580743000.0,
+                26580743000.0
+            ],
+            [
+                33035165000.0,
+                33035165000.0,
+                27176736000.0,
+                27176736000.0
+            ],
+            [
+                28274226000.0,
+                28274226000.0,
+                29319054000.0,
+                29319054000.0
+            ],
+            [
+                382399000.0,
+                382399000.0,
+                424451000.0,
+                424451000.0
+            ],
+            [
+                4327415000.0,
+                4327415000.0,
+                -2738311000.0,
+                -2738311000.0
+            ],
+            [
+                54952000.0,
+                54952000.0,
+                14958000.0,
+                14958000.0
+            ],
+            [
+                359675000.0,
+                359675000.0,
+                384902000.0,
+                384902000.0
+            ],
+            [
+                0.0,
+                0.0,
+                111779000.0,
+                111779000.0
+            ],
+            [
+                378572000.0,
+                378572000.0,
+                581035000.0,
+                581035000.0
+            ],
+            [
+                541629000.0,
+                541629000.0,
+                683344000.0,
+                683344000.0
+            ],
+            [
+                32133861000.0,
+                32133861000.0,
+                26108490000.0,
+                26108490000.0
+            ],
+            [
+                32601641000.0,
+                32601641000.0,
+                26580743000.0,
+                26580743000.0
+            ],
+            [
+                77653000.0,
+                77653000.0,
+                73064000.0,
+                73064000.0
+            ],
+            [
+                81577000.0,
+                81577000.0,
+                74050000.0,
+                74050000.0
+            ],
+            [
+                1955000.0,
+                1955000.0,
+                162793000.0,
+                162793000.0
+            ],
+            [
+                8000.0,
+                8000.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "balance_col_list": [
+            "Total Liab",
+            "Total Stockholder Equity",
+            "Total Assets",
+            "Common Stock",
+            "Other Current Assets",
+            "Retained Earnings",
+            "Other Liab",
+            "Other Assets",
+            "Cash",
+            "Total Current Liabilities",
+            "Total Current Assets",
+            "Long Term Investments",
+            "Net Tangible Assets",
+            "Short Term Investments",
+            "Net Receivables",
+            "Accounts Payable",
+            "Other Current Liab"
+        ],
+        "next_update": "2021-10-30"
     },
     "VTI": {
         "date_list": [
@@ -12167,7 +12286,7 @@
         ],
         "balance_list": [],
         "balance_col_list": [],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "MU": {
         "date_list": [
@@ -12376,7 +12495,7 @@
             "Accounts Payable",
             "Minority Interest"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "SKLZ": {
         "date_list": [
@@ -12515,7 +12634,7 @@
             "Accounts Payable",
             "Deferred Long Term Liab"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "AI": {
         "date_list": [
@@ -12696,7 +12815,7 @@
             "Other Current Assets",
             "Long Term Investments"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "MS": {
         "date_list": [
@@ -12891,7 +13010,7 @@
             "Accounts Payable",
             "Property Plant Equipment"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "BAC": {
         "date_list": [
@@ -13079,7 +13198,7 @@
             "Accounts Payable",
             "Deferred Long Term Asset Charges"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "CRSR": {
         "date_list": [
@@ -13267,7 +13386,7 @@
             "Deferred Long Term Liab",
             "Short Long Term Debt"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "AAL": {
         "date_list": [
@@ -13469,7 +13588,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "CRWD": {
         "date_list": [
@@ -13657,7 +13776,7 @@
             "Long Term Debt",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "NKE": {
         "date_list": [
@@ -13852,7 +13971,7 @@
             "Accounts Payable",
             "Short Long Term Debt"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "NAKD": {
         "date_list": [
@@ -14005,7 +14124,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "ICLN": {
         "date_list": [
@@ -14018,7 +14137,7 @@
         ],
         "balance_list": [],
         "balance_col_list": [],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "ZM": {
         "date_list": [
@@ -14199,7 +14318,7 @@
             "Net Receivables",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "UBS": {
         "date_list": [
@@ -14394,7 +14513,7 @@
             "Accounts Payable",
             "Good Will"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "NET": {
         "date_list": [
@@ -14575,7 +14694,7 @@
             "Long Term Debt",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "UBER": {
         "date_list": [
@@ -14763,7 +14882,7 @@
             "Long Term Debt",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "TSM": {
         "date_list": [
@@ -14972,7 +15091,7 @@
             "Accounts Payable",
             "Short Long Term Debt"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "DIS": {
         "date_list": [
@@ -15160,7 +15279,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "V": {
         "date_list": [
@@ -15348,7 +15467,7 @@
             "Deferred Long Term Asset Charges",
             "Short Long Term Debt"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "BIDU": {
         "date_list": [
@@ -15557,7 +15676,7 @@
             "Treasury Stock",
             "Other Stockholder Equity"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "JNJ": {
         "date_list": [
@@ -15752,7 +15871,7 @@
             "Other Current Assets",
             "Short Long Term Debt"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "TDOC": {
         "date_list": [
@@ -15933,7 +16052,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "PSFE": {
         "date_list": [
@@ -16121,7 +16240,7 @@
             "Long Term Debt",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "DAL": {
         "date_list": [
@@ -16316,7 +16435,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "DIDI": {
         "date_list": [
@@ -16462,7 +16581,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "XELA": {
         "date_list": [
@@ -16664,7 +16783,7 @@
             "Accounts Payable",
             "Short Term Investments"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "SENS": {
         "date_list": [
@@ -16845,7 +16964,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "SPRT": {
         "date_list": [
@@ -16998,7 +17117,7 @@
             "Accounts Payable",
             "Intangible Assets"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "MMAT": {
         "date_list": [
@@ -17172,7 +17291,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "XLNX": {
         "date_list": [
@@ -17374,7 +17493,7 @@
             "Long Term Investments",
             "Short Long Term Debt"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "HOOD": {
         "date_list": [
@@ -17387,7 +17506,7 @@
         ],
         "balance_list": [],
         "balance_col_list": [],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "LCID": {
         "date_list": [
@@ -17400,7 +17519,7 @@
         ],
         "balance_list": [],
         "balance_col_list": [],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "NVAX": {
         "date_list": [
@@ -17574,7 +17693,7 @@
             "Short Term Investments",
             "Other Liab"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "MRNA": {
         "date_list": [
@@ -17748,7 +17867,7 @@
             "Accounts Payable",
             "Common Stock"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "HP": {
         "date_list": [
@@ -17936,7 +18055,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "ILMN": {
         "date_list": [
@@ -18131,7 +18250,7 @@
             "Accounts Payable",
             "Deferred Long Term Asset Charges"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "MCD": {
         "date_list": [
@@ -18326,7 +18445,7 @@
             "Intangible Assets",
             "Deferred Long Term Asset Charges"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "WFC": {
         "date_list": [
@@ -18514,7 +18633,7 @@
             "Accounts Payable",
             "Other Liab"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "PTON": {
         "date_list": [
@@ -18681,7 +18800,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "MSTR": {
         "date_list": [
@@ -18848,7 +18967,7 @@
             "Accounts Payable",
             "Deferred Long Term Liab"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "MARA": {
         "date_list": [
@@ -19015,7 +19134,7 @@
             "Accounts Payable",
             "Net Receivables"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "ATER": {
         "date_list": [
@@ -19196,7 +19315,7 @@
             "Accounts Payable",
             "Long Term Debt"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "BBBY": {
         "date_list": [
@@ -19398,7 +19517,7 @@
             "Short Long Term Debt",
             "Net Receivables"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "BTBT": {
         "date_list": [
@@ -19558,7 +19677,7 @@
             "Treasury Stock",
             "Other Stockholder Equity"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "BTCM": {
         "date_list": [
@@ -19732,7 +19851,7 @@
             "Accounts Payable",
             "Short Term Investments"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "TTD": {
         "date_list": [
@@ -19885,7 +20004,7 @@
             "Other Stockholder Equity",
             "Long Term Debt"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "IRNT": {
         "date_list": [
@@ -20045,7 +20164,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "WOOF": {
         "date_list": [
@@ -20240,7 +20359,7 @@
             "Accounts Payable",
             "Other Current Liab"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "UPST": {
         "date_list": [
@@ -20386,7 +20505,7 @@
             "Accounts Payable",
             "Other Current Liab"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "AFRM": {
         "date_list": [
@@ -20553,7 +20672,7 @@
             "Accounts Payable",
             "Other Current Liab"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "U": {
         "date_list": [
@@ -20734,7 +20853,7 @@
             "Accounts Payable",
             "Long Term Debt"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "RKLB": {
         "date_list": [
@@ -20915,7 +21034,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "PINS": {
         "date_list": [
@@ -21075,7 +21194,7 @@
             "Accounts Payable",
             "Good Will"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "PENN": {
         "date_list": [
@@ -21256,7 +21375,7 @@
             "Long Term Debt",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "CZR": {
         "date_list": [
@@ -21465,7 +21584,7 @@
             "Deferred Long Term Asset Charges",
             "Common Stock"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "SBUX": {
         "date_list": [
@@ -21674,7 +21793,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "FUTU": {
         "date_list": [
@@ -21841,7 +21960,7 @@
             "Deferred Long Term Asset Charges",
             "Long Term Investments"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "CSCO": {
         "date_list": [
@@ -22036,7 +22155,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "WMT": {
         "date_list": [
@@ -22238,7 +22357,7 @@
             "Other Current Assets",
             "Deferred Long Term Asset Charges"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "EA": {
         "date_list": [
@@ -22426,7 +22545,7 @@
             "Short Long Term Debt",
             "Capital Surplus"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "IBM": {
         "date_list": [
@@ -22635,7 +22754,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "CRM": {
         "date_list": [
@@ -22837,7 +22956,7 @@
             "Long Term Debt",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "GS": {
         "date_list": [
@@ -23025,7 +23144,7 @@
             "Long Term Debt",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "SDC": {
         "date_list": [
@@ -23213,7 +23332,7 @@
             "Inventory",
             "Accounts Payable"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
     },
     "GME": {
         "date_list": [
@@ -23387,6 +23506,215 @@
             "Long Term Debt",
             "Deferred Long Term Asset Charges"
         ],
-        "next_update": "2021-10-20"
+        "next_update": "2021-10-30"
+    },
+    "HPE": {
+        "date_list": [
+            "2020-10-31",
+            "2021-01-31",
+            "2021-04-30",
+            "2021-07-31"
+        ],
+        "balance_list": [
+            [
+                1103000000.0,
+                993000000.0,
+                950000000.0,
+                892000000.0
+            ],
+            [
+                28350000000.0,
+                28427000000.0,
+                28538000000.0,
+                28632000000.0
+            ],
+            [
+                37919000000.0,
+                37192000000.0,
+                37521000000.0,
+                39364000000.0
+            ],
+            [
+                16049000000.0,
+                16212000000.0,
+                16560000000.0,
+                17020000000.0
+            ],
+            [
+                47000000.0,
+                47000000.0,
+                51000000.0,
+                53000000.0
+            ],
+            [
+                76000000.0,
+                81000000.0,
+                82000000.0,
+                86000000.0
+            ],
+            [
+                4280000000.0,
+                4015000000.0,
+                3953000000.0,
+                3959000000.0
+            ],
+            [
+                54015000000.0,
+                53451000000.0,
+                54132000000.0,
+                56437000000.0
+            ],
+            [
+                13000000.0,
+                13000000.0,
+                13000000.0,
+                13000000.0
+            ],
+            [
+                1782000000.0,
+                2300000000.0,
+                2180000000.0,
+                2399000000.0
+            ],
+            [
+                -8375000000.0,
+                -8332000000.0,
+                -8229000000.0,
+                -7994000000.0
+            ],
+            [
+                6097000000.0,
+                7298000000.0,
+                7245000000.0,
+                7234000000.0
+            ],
+            [
+                17873000000.0,
+                17873000000.0,
+                17873000000.0,
+                17948000000.0
+            ],
+            [
+                -3939000000.0,
+                -3896000000.0,
+                -3762000000.0,
+                -3631000000.0
+            ],
+            [
+                3989000000.0,
+                5011000000.0,
+                5269000000.0,
+                5548000000.0
+            ],
+            [
+                3504000000.0,
+                3452000000.0,
+                3946000000.0,
+                4317000000.0
+            ],
+            [
+                18738000000.0,
+                17931000000.0,
+                17980000000.0,
+                19641000000.0
+            ],
+            [
+                2770000000.0,
+                2713000000.0,
+                2509000000.0,
+                2741000000.0
+            ],
+            [
+                -3939000000.0,
+                -3896000000.0,
+                -3762000000.0,
+                -3631000000.0
+            ],
+            [
+                2528000000.0,
+                1566000000.0,
+                1554000000.0,
+                1567000000.0
+            ],
+            [
+                16556000000.0,
+                16072000000.0,
+                16703000000.0,
+                18745000000.0
+            ],
+            [
+                2685000000.0,
+                2714000000.0,
+                2640000000.0,
+                2691000000.0
+            ],
+            [
+                -3071000000.0,
+                -2798000000.0,
+                -2407000000.0,
+                -1964000000.0
+            ],
+            [
+                4073000000.0,
+                2933000000.0,
+                2936000000.0,
+                3297000000.0
+            ],
+            [
+                12133000000.0,
+                11963000000.0,
+                12296000000.0,
+                12489000000.0
+            ],
+            [
+                2674000000.0,
+                2791000000.0,
+                3117000000.0,
+                3942000000.0
+            ],
+            [
+                5383000000.0,
+                5196000000.0,
+                5533000000.0,
+                6526000000.0
+            ],
+            [
+                1778000000.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "balance_col_list": [
+            "Intangible Assets",
+            "Capital Surplus",
+            "Total Liab",
+            "Total Stockholder Equity",
+            "Minority Interest",
+            "Deferred Long Term Liab",
+            "Other Current Liab",
+            "Total Assets",
+            "Common Stock",
+            "Other Current Assets",
+            "Retained Earnings",
+            "Other Liab",
+            "Good Will",
+            "Treasury Stock",
+            "Other Assets",
+            "Cash",
+            "Total Current Liabilities",
+            "Short Long Term Debt",
+            "Other Stockholder Equity",
+            "Property Plant Equipment",
+            "Total Current Assets",
+            "Long Term Investments",
+            "Net Tangible Assets",
+            "Net Receivables",
+            "Long Term Debt",
+            "Inventory",
+            "Accounts Payable",
+            "Deferred Long Term Asset Charges"
+        ],
+        "next_update": "2021-10-29"
     }
 }

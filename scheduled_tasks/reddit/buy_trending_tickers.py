@@ -1,17 +1,22 @@
 import os
 import sys
-import sqlite3
 import logging
+import mysql.connector
+from mysql.connector import Error
 
-sys.path.append(os.path.join(os.path.dirname(__file__), '..\\..'))
+sys.path.append(os.path.join(os.path.dirname(__file__), '../../'))
 from fast_yahoo import *
 
 logging.basicConfig(filename=r'database/logging.log', level=logging.INFO)
 
-conn = sqlite3.connect(r"database/database.db", check_same_thread=False)
+
+conn = mysql.connector.connect(host='localhost',
+                                    database='skynet_aurora',
+                                    user='auroratrades',
+                                    password='Moneydick42069!')
 db = conn.cursor()
 
-db.execute("SELECT * FROM reddit_etf WHERE status=?", ("Open", ))
+db.execute("SELECT * FROM `skynet_aurora`.`reddit_etf`")
 prev_bought = db.fetchall()
 prev_bought_ticker = []
 for bought in prev_bought:
@@ -129,7 +134,7 @@ def update_bought_ticker_price():
 if __name__ == '__main__':
     print("Previously bought tickers: ", prev_bought_ticker)
     db.execute("SELECT date_updated FROM wallstreetbets ORDER BY ID DESC LIMIT 1")
-    db_date = db.fetchone()[0]
+    db_date = db.fetchall()
     buy_new_ticker(db_date)
     sell_ticker(db_date)
     update_bought_ticker_price()

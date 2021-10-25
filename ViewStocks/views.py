@@ -58,11 +58,11 @@ option_market_close_time = "030000"   # 4.15AM + 6H45MIN = 11AM   201500
 			Template New
 """
 
-# def index(request):
-#     context = {'segment': 'index'}
-# 
-#     html_template = loader.get_template('home/index.html')
-#     return HttpResponse(html_template.render(context, request))
+def editor(request):
+
+    context = {'segment': 'editor'}
+    html_template = loader.get_template('editor.html')
+    return HttpResponse(html_template.render(context, request))
 
 def welcome(request):
     context = {'error': 'error_false'}

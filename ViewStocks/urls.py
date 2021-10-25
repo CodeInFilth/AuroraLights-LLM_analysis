@@ -8,6 +8,7 @@ from ViewStocks.views import (login_view, register_user, discordLoginView)
 urlpatterns = [
     path('', views.main, name='main'),
     path('welcome', views.welcome, name='welcome'),
+    path('analyst-alert', views.editor, name='editor'),
 
     # Matches any html file
 #    re_path(r'^.*\.*', views.pages, name='pages'),

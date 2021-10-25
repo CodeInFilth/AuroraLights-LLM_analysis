@@ -1,8 +1,1 @@
-
-cd "venv/Scripts"
-
-call activate
-
-cd ../..
-
-call python manage.py runserver
+python3 manage.py runsslserver 0.0.0.0:8080 --certificate /home/auroratrades/auroratrades_com.crt --key /home/auroratrades/ssl.key

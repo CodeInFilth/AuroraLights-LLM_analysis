@@ -6,7 +6,7 @@ import sqlite3
 import pandas as pd
 from bs4 import BeautifulSoup
 
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.append(os.path.join(os.path.dirname(__file__), '../'))
 
 import scheduled_tasks.reddit.get_reddit_trending_stocks.fast_yahoo as fast_yahoo
 
@@ -153,6 +153,6 @@ def delete_old_earnings(last_date):
 
 
 if __name__ == '__main__':
-    insert_earnings_into_db(get_earnings(1, forward=True))
+ #   insert_earnings_into_db(get_earnings(1, forward=True))
     update_previous_earnings(get_earnings(7, forward=False))
-    delete_old_earnings("2021-10-01")
+#    delete_old_earnings("2021-10-01")

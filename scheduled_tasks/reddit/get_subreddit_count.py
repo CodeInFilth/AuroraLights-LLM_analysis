@@ -1,21 +1,24 @@
 import os
 import sys
-import sqlite3
+import mysql.connector
+from mysql.connector import Error
 import praw
 import yfinance as yf
+import mysql.connector
 from datetime import datetime
 
-sys.path.append(os.path.join(os.path.dirname(__file__), '..\\..'))
+sys.path.append(os.path.join(os.path.dirname(__file__), '../../'))
 from scheduled_tasks.reddit.config import *
 
 CLIENT_ID = API_REDDIT_CLIENT_ID
 CLIENT_SECRET = API_REDDIT_CLIENT_SECRET
 USER_AGENT = API_REDDIT_USER_AGENT
 reddit = praw.Reddit(client_id=CLIENT_ID, client_secret=CLIENT_SECRET, user_agent=USER_AGENT)
-
-conn = sqlite3.connect(r"database/database.db", check_same_thread=False)
+conn = mysql.connector.connect(host='localhost',
+                                    database='skynet_aurora',
+                                    user='auroratrades',
+                                    password='Moneydick42069!')
 db = conn.cursor()
-
 # key of the dict is the symbol of the stock (if applicable), value is the subreddit
 interested_stocks_subreddits = {
     "SUMMARY": ["wallstreetbets", "stocks", "options", "pennystocks", "SPACs", "Shortsqueeze"],

@@ -1,6 +1,8 @@
 import os
 import sys
 import math
+import mysql.connector
+from mysql.connector import Error
 from collections import Counter
 
 import praw
@@ -13,9 +15,11 @@ import scheduled_tasks.reddit.config as cfg
 
 client = CoinGeckoAPI()
 
-conn = sqlite3.connect(r"database/database.db", check_same_thread=False)
+conn = mysql.connector.connect(host='localhost',
+                                    database='skynet_aurora',
+                                    user='auroratrades',
+                                    password='Moneydick42069!')
 db = conn.cursor()
-
 # x base point of for a ticker that appears on a subreddit title or text body that fits the search criteria
 base_points = 2
 

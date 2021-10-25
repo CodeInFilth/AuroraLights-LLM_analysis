@@ -15,8 +15,14 @@ import scheduled_tasks.reddit.config as cfg
 from custom_extensions.stopwords import stopwords_list
 from custom_extensions.custom_words import new_words
 
-conn = sqlite3.connect(r"database/database.db", check_same_thread=False)
+import mysql.connector
+from mysql.connector import Error
+conn = mysql.connector.connect(host='localhost',
+                                    database='skynet_aurora',
+                                    user='auroratrades',
+                                    password='Moneydick42069!')
 db = conn.cursor()
+
 
 analyzer = SentimentIntensityAnalyzer()
 analyzer.lexicon.update(new_words)

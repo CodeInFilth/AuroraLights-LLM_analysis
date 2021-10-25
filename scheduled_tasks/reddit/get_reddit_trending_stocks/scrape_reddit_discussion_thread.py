@@ -1,7 +1,11 @@
 import re
 import os
 import sys
-import sqlite3
+import mysql.connector
+from sqlalchemy import create_engine
+import pymysql
+pymysql.install_as_MySQLdb()
+import MySQLdb
 import praw
 import pandas as pd
 from nltk.corpus import stopwords
@@ -21,7 +25,12 @@ reddit = praw.Reddit(client_id=cfg.API_REDDIT_CLIENT_ID,
                      client_secret=cfg.API_REDDIT_CLIENT_SECRET,
                      user_agent=cfg.API_REDDIT_USER_AGENT)
 
-conn = sqlite3.connect(r"database/database.db", check_same_thread=False)
+
+conn = pymysql.connect(host='localhost',
+                    database='skynet_aurora',
+                    user='auroratrades',
+                    password='Moneydick42069!')
+insdb = conn.cursor()
 db = conn.cursor()
 
 pattern = "(?<=\$)?\\b[A-Z]{1,5}\\b(?:\.[A-Z]{1,2})?"
@@ -212,6 +221,8 @@ def wsb_live():
     # Criteria to insert into db
     df = df[(df["mentions"] >= 3) & (df["word"].str.len() > 1)]
 
+    conn = create_engine('mysql+mysqlconnector://auroratrades:Moneydick42069!@localhost:3306/skynet_aurora', echo=False)
+
     df["date_updated"] = current_datetime_str
     df.to_sql("wsb_word_cloud", conn, if_exists="append", index=False)
 
@@ -310,8 +321,7 @@ def get_mkt_cap():
     print(threshold_hour, "onwards being saved to yf database")
 
     ticker_list, mentions_list = list(), list()
-    db.execute("SELECT ticker, SUM(mentions) FROM wsb_trending_24H WHERE date_updated > ? GROUP BY "
-               "ticker ORDER BY SUM(mentions) DESC LIMIT 50", (threshold_datetime,))
+    db.execute("SELECT ticker, SUM(mentions) FROM wsb_trending_24H WHERE date_updated > % GROUP BY ticker ORDER BY SUM(mentions) DESC LIMIT 50", int(float(threshold_datetime)))
     x = db.fetchall()
     for row in x:
         ticker_list.append(row[0])
@@ -360,4 +370,3 @@ if __name__ == '__main__':
     # get_mkt_cap()
 
     # python scheduled_tasks/reddit/get_reddit_trending_stocks/scrape_reddit_discussion_thread.py
-

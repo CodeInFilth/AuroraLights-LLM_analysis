@@ -50,7 +50,7 @@ header = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHT
 #         print("USER True")
 #         return True
 
-def default_ticker(request, ticker="AAPL"):
+def default_ticker(request, ticker="MARA"):
     if request.GET.get("quote"):
         ticker_selected = request.GET['quote'].upper().replace(" ", "")
     else:
