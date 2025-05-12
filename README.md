@@ -1,3 +1,8 @@
+This is a large scale LLM and ML project using Django and Opensource tools to aggregate financial market data and store historical data inside a SQL database.
+
+Simply run the tasks on a cron and have django process the smaller actions.
+
+
 ```powershell
    ████████▓████████████████████████       [ I made this at 4am so dont judge my dirty code ]
    ████████████████████████▓████████             [ Tested on Mac OS 10.14+ and Ubuntu 18.04 ]
